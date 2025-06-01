@@ -1,0 +1,140 @@
+<!-- 
+  CONFIGURAÇÃO DO LESS
+1 - Abra o terminal (F1) e instale a versão global do Less:
+      npm install -g less
+2 - Execute o comando para criar o package.json:
+      npm init
+3 - Para instalar a dependência do Less:
+      npm install --save-dev less
+4 - Como boa prática, crie o arquivo ".gitignore" e nele inclua "node_modules" para evitar sobrepeso desnecessário ao subir o projeto no Git.
+5 - Crie uma pasta "styles" em um local desejado e dentro dela crie o arquivo "main.less".
+6 - No package.json, na área de scripts, insira:
+      "less": "lessc ./src/styles/main.less ./build/styles/main.css"
+7 - Execute no terminal o comando:
+      npm run less
+
+CONFIGURAÇÃO DE PLUGIN PARA COMPILAÇÃO AUTOMÁTICA DO LESS
+1 - No terminal, execute a instalação global:
+      npm i -g less-watch-compiler
+2 - Em seguida, instale como dependência do projeto:
+      npm i --save-dev less-watch-compiler
+3 - IMPORTANTE: Se estiver usando este plugin, altere o script no package.json para:
+      "less": "less-watch-compiler ./src/styles ./build/styles main.less"
+4 - Com isso feito, execute novamente:
+      npm run less
+      Para cancelar o watch, pressione Ctrl + C no terminal.
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chás Artesanais</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./build/styles/main.css" />
+  </head>
+
+  <body id="inicio">
+    <!-- Cabeçalho -->
+    <header>
+      <div class="container">
+        <div class="branding">
+          <img
+            src="./src/images/logotipo.png" alt="Logotipo Chás Artesanais" class="logo" />
+          <h1 class="site-title">Chás Artesanais</h1>
+        </div>
+        <nav>
+          <ul class="menu">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Produtos -->
+    <section id="produtos">
+      <div class="container">
+        <h2>Produtos</h2>
+        <ul class="products">
+          <li class="product-item">
+            <img src="./src/images/cha-verde.jpg" alt="Chá Verde" />
+            <h4>Chá Verde</h4>
+            <p>Folhas frescas com sabor suave e propriedades antioxidantes.</p>
+            <a href="#" class="product-button">Ver detalhes</a>
+          </li>
+
+          <li class="product-item">
+            <img src="./src/images/cha-camomila.jpg" alt="Chá de Camomila" />
+            <h4>Chá de Camomila</h4>
+            <p>Infusão calmante perfeita para relaxar e aliviar o estresse.</p>
+            <a href="#" class="product-button">Ver detalhes</a>
+          </li>
+
+          <li class="product-item">
+            <img src="./src/images/cha-preto.jpg" alt="Chá Preto" />
+            <h4>Chá Preto</h4>
+            <p>Sabor intenso e encorpado, ideal para um café da manhã energético.</p>
+            <a href="#" class="product-button">Ver detalhes</a>
+          </li>
+
+          <li class="product-item">
+            <img src="./src/images/cha-hibisco.jpg" alt="Chá de Hibisco" />
+            <h4>Chá de Hibisco</h4>
+            <p>Cor vibrante e sabor levemente ácido, excelente para refrescar.</p>
+            <a href="#" class="product-button">Ver detalhes</a>
+          </li>
+
+          <li class="product-item">
+            <img src="./src/images/cha-ervas.jpg" alt="Chá de Ervas" />
+            <h4>Chá de Ervas</h4>
+            <p>Blend especial com ervas selecionadas para equilíbrio e bem-estar.</p>
+            <a href="#" class="product-button">Ver detalhes</a>
+          </li>
+
+          <li class="product-item">
+            <img src="./src/images/cha-mate.jpg" alt="Chá Mate" />
+            <h4>Chá Mate</h4>
+            <p>Tradicional sabor sul-americano, perfeito para energia natural.</p>
+            <a href="#" class="product-button">Ver detalhes</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+      <div class="container">
+        <h2>Contato</h2>
+        <p>Envie uma mensagem ou fale conosco pelo WhatsApp ou Instagram.</p>
+        <p>Email: contato@chasartesanais.com.br</p>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+      <ul class="social">
+        <li>
+          <a href="https://facebook.com/seu_perfil" target="_blank">
+            <img src="./src/images/facebook.svg" alt="Facebook" width="24" height="24" />
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/seu_perfil" target="_blank">
+            <img src="./src/images/instagram.svg" alt="Instagram" width="24" height="24" />
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/seunumerowhatsapp" target="_blank">
+            <img src="./src/images/whatsapp.svg" alt="WhatsApp" width="24" height="24" />
+          </a>
+        </li>
+      </ul>
+      <p>@ 2025 - Todos os direitos reservados</p>
+    </footer>
+  </body>
+</html>

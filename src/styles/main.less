@@ -1,0 +1,224 @@
+@import "mapas.less";
+
+// Mixins
+.container() {
+    max-width: #layout[containerWidth];
+    width: 100%;
+    margin: 0 auto;
+}
+
+.flex-between() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button() {
+    display: block;
+    background-color: #colors[secondary];
+    color: #colors[white];
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin-top: 8px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #colors[secondary-hover];
+    }
+}
+
+// Estilos base
+body {
+    background-color: #colors[backgroundColor];
+    font-family: #fonts[family];
+    color: #colors[textColor];
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    .container();
+}
+
+header {
+    background-color: #colors[primary];
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    .container {
+        .flex-between();
+        padding: 6px 0;
+    }
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+
+    .logo {
+        max-width: 50px;
+        height: auto;
+        margin-right: 16px;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #colors[secondary];
+    }
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        margin-left: 24px;
+        list-style: none;
+
+        a {
+            color: #colors[white];
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+section {
+    padding: 72px 0 56px;
+
+    h2 {
+        margin-bottom: 40px;
+        color: #colors[textColor];
+    }
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 32.66%);
+    column-gap: 3%;
+    row-gap: 48px;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.product-item {
+    list-style: none;
+
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        background-color: #fff;
+        border-radius: 16px;
+    }
+
+    h4 {
+        margin: 16px 0 8px;
+        color: #colors[textColor];
+    }
+
+    p {
+        margin-bottom: 8px;
+        color: #colors[textLight];
+    }
+}
+
+.product-button {
+    .button();
+}
+
+footer {
+    background-color: #colors[primary];
+    padding: 24px 0;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #colors[white];
+    margin-top: 32px;
+
+    p {
+        margin-bottom: 16px;
+    }
+
+    .social {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+
+        li {
+            margin: 0;
+            list-style: none;
+
+            a {
+                color: #colors[white];
+                text-decoration: none;
+                display: inline-block;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+}
+
+// Breakpoints
+@media screen and (max-width: @tablet) {
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+        row-gap: 40px;
+    }
+}
+
+@media screen and (max-width: @mobile) {
+    .products {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-item {
+        width: 100%;
+        max-width: 360px;
+        margin-bottom: 32px;
+    }
+
+    .menu {
+        flex-direction: column;
+        margin-top: 16px;
+    }
+
+    .menu li {
+        margin-left: 0;
+        margin-bottom: 8px;
+    }
+
+    .branding {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-title {
+        font-size: 1.25rem;
+        margin-top: 8px;
+    }
+}
