@@ -58,6 +58,5 @@ Ou, se estiver configurado com package.json:
 
 npm run less
 
-🙋 Autora
-
-Katiadantass
+## 🙋 Autora  
+[Katiadantass](https://github.com/Katiadantass)
