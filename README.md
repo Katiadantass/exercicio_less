@@ -53,6 +53,7 @@ O objetivo foi converter um site modelo de HTML/CSS para LESS, aplicando boas pr
 No entanto, você pode clonar o repositório e rodar localmente com o comando:
 
 lessc src/styles/main.less build/styles/main.css
+
 Ou, se estiver configurado com package.json:
 
 npm run less
